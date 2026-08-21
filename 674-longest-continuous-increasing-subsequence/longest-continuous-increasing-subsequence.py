@@ -13,6 +13,7 @@ class Solution(object):
 
             else:
                 count+=1
-                max_seq = max(count, max_seq)
+                
+            max_seq = max(count, max_seq)
 
         return max_seq
