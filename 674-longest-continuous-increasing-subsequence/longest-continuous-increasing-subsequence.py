@@ -4,16 +4,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        count = 1
-        max_seq = 1
+        longest = 1
+        current = 1
 
-        for i in range(1,len(nums)):
-            if nums[i] <= nums[i-1]:
-                count = 1
-
+        for i in range(1, len(nums)):
+            if nums[i] > nums[i-1]:
+                current+=1
             else:
-                count+=1
-                
-            max_seq = max(count, max_seq)
+                current = 1
 
-        return max_seq
+            longest = max(current, longest)
+
+        return longest
