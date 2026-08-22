@@ -4,6 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+
         roman = {
             'I' : 1,
             'V' : 5,
@@ -16,12 +17,12 @@ class Solution(object):
 
         total = 0
 
-        for i in range(len(s)-1):
+        for i in range(0,len(s)-1):
             if roman[s[i]] < roman[s[i+1]]:
                 total -= roman[s[i]]
             else:
                 total += roman[s[i]]
-        
+
         total += roman[s[-1]]
 
-        return total  
+        return total        
